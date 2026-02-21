@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Math Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Simple Math Quiz</h1>
+      <p class="subtitle">Pick what to practice and start solving. (Tip: press Enter to submit.)</p>
+
+      <section class="controls" aria-label="Quiz controls">
+        <label>
+          Number of questions
+          <select id="questionCount">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+        </label>
+
+        <label>
+          Operations
+          <select id="operationMode">
+            <option value="mixed" selected>Mixed (+ − × ÷)</option>
+            <option value="add">Addition only</option>
+            <option value="subtract">Subtraction only</option>
+            <option value="multiply">Multiplication only</option>
+            <option value="divide">Division only</option>
+          </select>
+        </label>
+
+        <button id="startBtn" type="button">Start Quiz</button>
+      </section>
+
+      <section id="quizCard" class="quiz-card hidden" aria-live="polite">
+        <div class="status-row">
+          <p id="progressText">Question 1 / 10</p>
+          <p id="scoreText">Score: 0</p>
+        </div>
+        <p id="questionText" class="question">8 + 4 = ?</p>
+
+        <form id="answerForm" autocomplete="off">
+          <input
+            id="answerInput"
+            type="number"
+            inputmode="numeric"
+            required
+            placeholder="Enter answer"
+            aria-label="Answer"
+          />
+          <button type="submit">Submit</button>
+        </form>
+
+        <p id="feedbackText" class="feedback" role="status"></p>
+      </section>
+
+      <section id="resultCard" class="result-card hidden" aria-live="polite">
+        <h2>Quiz Complete 🎉</h2>
+        <p id="finalScoreText"></p>
+        <button id="retryBtn" type="button">Try Again</button>
+      </section>
+    </main>
+
+    <noscript><p class="noscript">This quiz needs JavaScript enabled.</p></noscript>
+    <script src="script.js"></script>
+  </body>
+</html>

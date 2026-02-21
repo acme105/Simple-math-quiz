@@ -1,0 +1,10 @@
+{
+  "name": "simple-math-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple static math quiz website",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check script.js && node --check server.js"
+  }
+}
